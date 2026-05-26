@@ -1,0 +1,29 @@
+name: doc_summary
+
+steps:
+  - id: summarize
+    type: llm
+    prompt: |
+      Summarize the following document:
+
+      {{ input.document }}
+
+  - id: extract_key_points
+    type: llm
+    depends_on: [summarize]
+    prompt: |
+      Extract 5 key points from this summary:
+
+      {{ steps.summarize.output }}
+
+  - id: final_report
+    type: llm
+    depends_on: [extract_key_points]
+    prompt: |
+      Generate a concise final report based on:
+
+      Summary:
+      {{ steps.summarize.output }}
+
+      Key points:
+      {{ steps.extract_key_points.output }}

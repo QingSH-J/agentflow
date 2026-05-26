@@ -1,0 +1,42 @@
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Go build artifacts
+/bin/
+/dist/
+/build/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+
+# Test and coverage output
+coverage.out
+coverage.html
+*.coverprofile
+*.prof
+
+# Runtime files
+/tmp/
+/logs/
+*.log
+*.pid
+
+# Local database dumps/backups
+*.dump
+*.backup
+*.sql.gz
+
+# Docker local overrides
+docker-compose.override.yml
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
