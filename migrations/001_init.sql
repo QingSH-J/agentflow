@@ -47,3 +47,4 @@ CREATE TABLE IF NOT EXISTS artifacts (
 CREATE INDEX IF NOT EXISTS idx_steps_run_id ON steps(run_id);
 CREATE INDEX IF NOT EXISTS idx_steps_status ON steps(status);
 CREATE INDEX IF NOT EXISTS idx_events_run_id_created_at ON events(run_id, created_at);
+
